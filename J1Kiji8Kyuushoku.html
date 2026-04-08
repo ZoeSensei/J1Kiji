@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>NHK Easy Article</title>
+<style>
+/* ====== BASIC LAYOUT ====== */
+body {
+    font-family: "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #222;
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 0 14px;
+    background-color: #fff;
+}
+
+/* ====== CONTROL BUTTONS ====== */
+#nhk-controls {
+    margin: 15px 0 25px 0;
+    text-align: center;
+}
+.nhk-btn {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 24px;
+    background-color: #9f75d1; /* lavender */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.425em; /* ~24px */
+    border: none;
+    transition: background-color 0.2s ease;
+}
+.nhk-btn:hover {
+    background-color: #805ab0; /* slightly darker lavender on hover */
+}
+
+/* ====== FURIGANA TOGGLE ====== */
+#nhk-article.hide-furigana rt {
+    display: none;
+}
+
+/* ====== DICTIONARY POPUPS (hover) ====== */
+.dicWin {
+    cursor: help;
+    text-decoration: underline dotted;
+    position: relative;
+}
+.dicWin:hover::after {
+    content: attr(data-def);
+    position: absolute;
+    top: 1.6em;
+    left: 0;
+    white-space: normal;
+    background-color: #ffffe0;
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    font-size: 0.9em;
+    color: #000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 9999;
+    width: max-content;
+    max-width: 320px;
+}
+
+/* small helpers */
+img { max-width: 70%; height: auto; display: block; margin: 8px auto; }
+.under { text-decoration: underline; }
+
+/* ====== COLOR LEGEND ====== */
+.article-main__colors {
+    margin-top: 20px;
+}
+.about-word-color__list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 8px 0;
+}
+.word-color-list__item {
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 6px;
+}
+.word-color-list__item span {
+    vertical-align: middle;
+}
+.about-word-color__caution {
+    color:#666;
+    font-size:0.95em;
+    margin-top:8px;
+}
+
+.color-legend-box {
+    background-color: #F5F5DC; /* light beige */
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 6px;
+}
+    
+/* ====== PAGE BANNER ====== */
+#page-banner {
+    background-color: #0078d7; /* blue */
+    color: #fff;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 15px 0;
+    margin: 0 0 20px 0;
+    border-radius: 4px;
+}
+
+/*==== Details line spacing ==== */
+details p {
+  margin: 0.5em 0;   /* smaller vertical margin */
+  line-height: 1.4;  /* normal line spacing */
+}
+    
+</style>
+</head>
+<body>
+
+<!-- ====== PAGE BANNER ====== -->
+<div id="page-banner">
+    NEWS WEB EASY やさしい日本語
+</div>
+
+<!-- ====== CONTROL BUTTON ====== -->
+<div id="nhk-controls">
+    <button class="nhk-btn" id="toggle-furigana">
+        <ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読み方<rt>よみかた</rt></ruby>を<ruby>消<rt>け</rt></ruby>す
+    </button>
+</div>
+
+<!-- ====== ARTICLE CONTENT ====== -->
+<div id="nhk-article">
+
+<h3 style="font-size: 20px; margin-bottom: 6px;">
+    イタリアの<ruby>大学生<rt>だいがくせい</rt></ruby>が<ruby>日本<rt>にっぽん</rt></ruby>の<ruby>学校<rt>がっこう</rt></ruby>の<ruby>給食<rt>きゅうしょく</rt></ruby>を<ruby>見<rt>み</rt></ruby>に<ruby>来<rt>く</rt></ruby>る
+</h3>
+
+<p style="text-align: center;">
+    <img src="https://github.com/ZoeSensei/J1Kiji/blob/main/J1Kiji8Pic.jpg?raw=true" alt="日本の小学生と一緒に食事をしているイタリアの大学生">
+</p>
+
+<p style="color: #555; margin-bottom: 20px;">[02月07日 11時30分]</p>
+
+  <p>
+      <strong style="color: #cf4a00;">イタリア</strong>の<ruby>大学<rt>だいがく</rt></ruby>で
+      <span class="dicWin" data-def="すべてのところ。ザ・ワールド。"><ruby>世界<rt>せかい</rt></ruby></span>の
+      <ruby>食事<rt>しょくじ</rt></ruby>の
+      <span class="dicWin" data-def="カルチャー"><ruby>文化<rt>ぶんか</rt></ruby></span>を<ruby>勉強<rt>べんきょう</rt></ruby>している<ruby>学生<rt>がくせい</rt></ruby>１４<ruby>人<rt>にん</rt></ruby>が、
+      <strong style="color: #cf4a00;"><ruby>日本<rt>にっぽん</rt></ruby></strong>の
+      <span class="dicWin" data-def="学校がみんなにあげる食べ物"><ruby>給食<rt>きゅうしょく</rt></ruby></span>を<ruby>見<rt>み</rt></ruby>るために
+      <strong style="color: #cf4a00;"><ruby>山形県<rt>やまがたけん</rt></ruby><ruby>鶴岡市<rt>つるおかし</rt></ruby></strong>へ
+      <ruby>来<rt>き</rt></ruby>ました。
+  </p>
+
+  <p>
+      <strong style="color: #cf4a00;"><ruby>鶴岡市<rt>つるおかし</rt></ruby></strong>では１３０<ruby>年<rt>ねん</rt></ruby><ruby>前<rt>まえ</rt></ruby>に
+      <strong style="color: #cf4a00;"><ruby>日本<rt>にっぽん</rt></ruby></strong>で<ruby>初<rt>はじ</rt></ruby>めて
+      <span class="dicWin" data-def="学校がみんなにあげる食べ物"><ruby>給食<rt>きゅうしょく</rt></ruby></span>が
+      <span class="dicWin" data-def="スタートする"><ruby>始<rt>はじ</rt></ruby>まった</span>と<ruby>言<rt>い</rt></ruby>われています。
+      <ruby>学校<rt>がっこう</rt></ruby>でみんなに<ruby>同<rt>おな</rt></ruby>じ<ruby>食事<rt>しょくじ</rt></ruby>を<ruby>出<rt>だ</rt></ruby>す
+      <strong style="color: #cf4a00;"><ruby>日本<rt>にっぽん</rt></ruby></strong>の
+      <span class="dicWin" data-def="学校がみんなにあげる食べ物"><ruby>給食<rt>きゅうしょく</rt></ruby></span>は、
+      <span class="dicWin" data-def="すべてのところ。ザ・ワールド。"><ruby>世界<rt>せかい</rt></ruby></span>でも
+      <span class="dicWin" data-def="すくない。おおくない。"><ruby>珍<rt>めずら</rt></ruby>しい</span>と<ruby>言<rt>い</rt></ruby>われています。
+  </p>
+
+  <p>
+      <strong style="color: #cf4a00;">イタリア</strong>の<ruby>学生<rt>がくせい</rt></ruby>たちはまず、
+      <strong style="color: #0e68b3;"><ruby>給食<rt>きゅうしょく</rt></ruby>センター</strong>へ<ruby>行<rt>い</rt></ruby>って、
+      <span class="dicWin" data-def="学校がみんなにあげる食べ物"><ruby>給食<rt>きゅうしょく</rt></ruby></span>の<ruby>作<rt>つく</rt></ruby>り<ruby>方<rt>かた</rt></ruby>を<ruby>見<rt>み</rt></ruby>ました。
+      そして、<span class="dicWin" data-def="学校がみんなにあげる食べ物"><ruby>給食<rt>きゅうしょく</rt></ruby></span>が１<ruby>日<rt>にち</rt></ruby>いくらかや、<ruby>作<rt>つく</rt></ruby>った
+      <span class="dicWin" data-def="学校がみんなにあげる食べ物"><ruby>給食<rt>きゅうしょく</rt></ruby></span>をどうやって
+      <ruby>学校<rt>がっこう</rt></ruby>に
+      <span class="dicWin" data-def="ものを一つのところから二つのところへ持っていくこと。"><ruby>届<rt>とど</rt></ruby>けている</span>かなどについて
+      <span class="dicWin" data-def="元気でうれしく"><ruby>熱心<rt>ねっしん</rt></ruby></span>に<ruby>質問<rt>しつもん</rt></ruby>しました。
+  </p>
+
+  <p>
+      そのあと、<ruby>学生<rt>がくせい</rt></ruby>たちは<ruby>近<rt>ちか</rt></ruby>くの<ruby>小学校<rt>しょうがっこう</rt></ruby>へ<ruby>行<rt>い</rt></ruby>って、
+      <ruby>子<rt>こ</rt></ruby>どもたちと<ruby>一緒<rt>いっしょ</rt></ruby>に
+      <span class="dicWin" data-def="学校がみんなにあげる食べ物"><ruby>給食<rt>きゅうしょく</rt></ruby></span>を<ruby>食<rt>た</rt></ruby>べました。
+      <ruby>学生<rt>がくせい</rt></ruby>は<ruby>子<rt>こ</rt></ruby>どもに
+      「<ruby>好<rt>す</rt></ruby>きな<ruby>食<rt>た</rt></ruby>べ<ruby>物<rt>もの</rt></ruby>は？」などと<ruby>聞<rt>き</rt></ruby>いていました。
+      この<ruby>日<rt>ひ</rt></ruby>の
+      <span class="dicWin" data-def="学校がみんなにあげる食べ物"><ruby>給食<rt>きゅうしょく</rt></ruby></span>には
+      ２<ruby>月<rt>がつ</rt></ruby><ruby>３日<rt>みっか</rt></ruby>の
+      <span class="dicWin" data-def="冬のおわりで、はるのはじまりにある祭日。"><ruby>節分<rt>せつぶん</rt></ruby></span>に<ruby>食<rt>た</rt></ruby>べる
+      <span class="dicWin" data-def="小さい食べ物の一つ。ピーとかえだまめとかピーナッツもこのようだ。"><ruby>豆<rt>まめ</rt></ruby></span>もあって、
+      <ruby>学生<rt>がくせい</rt></ruby>たちは<ruby>昔<rt>むかし</rt></ruby>から
+      <span class="dicWin" data-def="ずっとあること。コンティニュー。"><ruby>続<rt>つづ</rt></ruby>く</span>
+      <span class="dicWin" data-def="エベントとか祭りなど"><ruby>行事<rt>ぎょうじ</rt></ruby></span>の<ruby>食<rt>た</rt></ruby>べ<ruby>物<rt>もの</rt></ruby>が
+      <span class="dicWin" data-def="学校がみんなにあげる食べ物"><ruby>給食<rt>きゅうしょく</rt></ruby></span>に<ruby>出<rt>で</rt></ruby>ることに
+      <span class="dicWin" data-def="びっくりした。サプライズ"><ruby>驚<rt>おどろ</rt></ruby>いていました</span>。
+  </p>
+
+<!-- Audio player -->
+<p style="text-align: center; margin: 20px 0;">
+    <audio controls>
+        <source src="https://zoesensei.github.io/J1Kiji/J1Kiji8Listen.mp3" type="audio/mpeg">
+    </audio>
+</p>
+    
+<!-- Color legend -->
+<div class="color-legend-box">
+    <ul class="about-word-color__list word-color-list">
+        <li class="word-color-list__item is-person">
+            <span style="color: #03893d;"><strong>[みどり]</strong></span>
+            ...<ruby>人<rt>ひと</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>
+        </li>
+        <li class="word-color-list__item is-place">
+            <span style="color: #cf4a00;"><strong>[オレンジ]</strong></span>
+            …<ruby>国<rt>くに</rt></ruby>や<ruby>県<rt>けん</rt></ruby>、<ruby>町<rt>まち</rt></ruby>、<ruby>場所<rt>ばしょ</rt></ruby>などの<ruby>名前<rt>なまえ</rt></ruby>
+        </li>
+        <li class="word-color-list__item is-group">
+            <span style="color: #0e68b3;"><strong>[あお]</strong></span>
+            …<ruby>会社<rt>かいしゃ</rt></ruby>やグループなどの<ruby>名前<rt>なまえ</rt></ruby>
+        </li>
+    </ul>
+</div>
+ 
+<p class="about-word-color__caution">※下に<ruby>線<rt>せん</rt></ruby>があることばは<ruby>辞書<rt>じしょ</rt></ruby>の<ruby>説明<rt>せつめい</rt></ruby>を<ruby>見<rt>み</rt></ruby>ることができます。<ruby>押<rt>お</rt></ruby>すと、<ruby>辞書<rt>じしょ</rt></ruby>の説明を<ruby>見<rt>み</rt></ruby>ることができます。</p>
+
+<details id="normal-news">
+  <summary style="display:none;"></summary>
+  <h3 style="font-size: 20px; margin-bottom: 6px;">日本の給食は世界では珍しい？イタリアの学生が視察</h3>
+  <p style="color: #555; margin-bottom: 20px;">2019年2月5日 15時37分</p>
+
+<p style="text-align: center;">
+    <img src="https://github.com/ZoeSensei/J1Kiji/blob/main/J1Kiji8Pic.jpg?raw=true" alt="日本の小学生と一緒に食事をしているイタリアの大学生">
+</p>
+
+<p>世界の食文化について学んでいるイタリアの学生たちが、世界でも珍しい日本の給食を体験しようと、給食発祥の地とされる山形県鶴岡市を視察しました。</p>
+
+<p>来日しているのは、イタリアにある「食科学大学」の学生14人です。</p>
+<p>鶴岡市では、130年前に日本で初めて給食が始まったとされ、３年前、イタリアのミラノで食の国際博覧会が開かれたのをきっかけに現地の学生を受け入れています。</p>
+
+<p>鶴岡市によりますと、日本のように同じ給食を全員に提供するのは世界でも珍しいということで、イタリアの学生たちは、はじめに給食センターを訪れて調理の様子を見学しました。</p>
+<p>そして、担当者から、給食の歴史や配膳の流れを説明されると、１日当たりの給食費や配送の仕組みなどについて熱心に質問していました。</p>
+
+<p>続いて隣接する大泉小学校で５、６年生と給食をともにし、節分にちなんで「福豆」が登場すると、伝統文化を反映したメニューが提供されることに驚いていました。</p>
+
+<p>イタリア人の男子学生は、「日本のごはんは甘くておいしいです」と話していました。</p>
+    
+</details>
+
+<div style="text-align:center; margin-top: 10px;">
+  <button id="toggle-news" class="nhk-btn">
+    <ruby>普通<rt>ふつう</rt></ruby>のニュースを
+    <ruby>読<rt>よ</rt></ruby>む
+  </button>
+</div>
+    
+</div>
+
+<!-- ====== SCRIPT ====== -->
+<script>
+const btn = document.getElementById('toggle-furigana');
+btn.addEventListener('click', () => {
+    const article = document.getElementById('nhk-article');
+    article.classList.toggle('hide-furigana');
+
+    if(article.classList.contains('hide-furigana')){
+        btn.innerHTML = '<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読み方<rt>よみかた</rt></ruby>を<ruby>付<rt>つ</rt></ruby>ける';
+    } else {
+        btn.innerHTML = '<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>読み方<rt>よみかた</rt></ruby>を<ruby>消<rt>け</rt></ruby>す';
+    }
+});
+</script>
+
+<script>
+// Button toggles the <details>
+const newsBtn = document.getElementById('toggle-news');
+const details = document.getElementById('normal-news');
+
+newsBtn.addEventListener('click', () => {
+    details.open = !details.open;
+});
+</script>
+    
+</body>
+</html>
